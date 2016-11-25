@@ -1,28 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <!--
-        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
-        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
-    -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>PojSpill</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<head>
+    <title>Oblig 2</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            overflow: hidden;
+            font-family: arial;
+        }
+
+        #blocker {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        #instructions {
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -moz-box;
+            display: box;
+            -webkit-box-orient: horizontal;
+            -moz-box-orient: horizontal;
+            box-orient: horizontal;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            box-pack: center;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            color: #ffffff;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body onload="main()">
+    <div id="blocker">
+        <div id="instructions">
+            <span style="font-size:40px">Click to play</span>
+            <br />
+            (W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+        <canvas id="webgl" width="1127" height="960" style="width: 1127px; height: 960px;">
+            Denne nettleseren støtter ikke "canvas"-elementet!
+        </canvas>
+    </div>
+
+    <script src="lib/three.js"></script>
+
+    <script src="lib/PointerLockControls.js"></script>
+
+    <script src="lib/keyboard.js"></script>
+    <script src="lib/physi.js"></script>
+
+    <script src="scripts/Helper.js"></script>
+    <script src="scripts/BulletObject.js"></script>
+    <script src="scripts/Skybox.js"></script>
+
+    <script src="scripts/Test.js"></script>
+    <!--
+    <script src="../lib/physijs_worker.js"></script>
+    <script src="../lib/ammo.js"></script>
+        <script src="GameTest/stats.js"></script>
+        <script src="lib/wfa-coord.js"></script>
+            <script src="lib/TrackballControls.js"></script>
+    <script src="lib/FirstPersonControls.js"></script>
+    -->
+</body>
 </html>
